@@ -35,11 +35,12 @@ public class StringPermutations {
 
         Set<String> perms = new HashSet<>();
 
+        StringBuilder perm;
+
         for(String subPerm: subPerms) {
             for(int i=0; i< subPerm.length(); i++) {
-                String p1 = subPerm.substring(0,i);
-                String p2 = subPerm.substring(i);
-                perms.add(p1+first+p2);
+                perm = new StringBuilder(subPerm.substring(0,i) + first + subPerm.substring(i));
+                perms.add(perm.toString());
             }
             perms.add(subPerm+first);
         }
